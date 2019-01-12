@@ -1,7 +1,8 @@
 <html>
-	<body>
-		{{ especes.Nom_latin }}
-		{{ especes.Nom_vern  }}
-		
-	</body>
+    <body>
+		{% for specie in species %}
+            <li>{{ specie.Nom_latin }} | {{ specie.Nom_vern }}  </li>
+			<br>
+		{% endfor %}
+    </body>
 </html>

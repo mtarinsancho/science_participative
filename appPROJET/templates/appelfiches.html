@@ -1,12 +1,8 @@
 <html>
 	<body>
-		{% for t in table1 %}
-			{{ t.Nom_latin }} <br>
-			{{ t.Nom_vern }} <br>
-			
-			
+		{% for specie in species_table %}
+            <li>{{ specie.Nom_latin }} | {{ specie.Nom_vern }}  </li>
+			<br>
 		{% endfor %}
-		
-		
-	</body>
+    </body>
 </html>

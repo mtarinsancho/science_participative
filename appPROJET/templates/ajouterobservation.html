@@ -1,6 +1,6 @@
 <html>
 	<body>
-		<form action={% url 'observation' %} method="post">
+		<form action={% url 'observation' %}>
 			{% for field in form %}
 			<div class="fieldWrapper">
 				{{ field.errors }}

@@ -21,8 +21,7 @@ from appPROJET.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
 	url(r'appelfiches$', affichetable, name='table'),	
-    path('sp/get/<nom_vern>', showEspeces, name='especes'),
-    url(r'newSpecies$', newSpeciesForm),
+    path('sp/get/<search_text>', showEspeces, name='especes'),
     url(r'createNewSpecies$', newSpeciesForm),
 ]
 

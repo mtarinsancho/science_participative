@@ -1,0 +1,13 @@
+<html>
+	<body>
+		<form action={% url 'observation' %} method="post">
+			{% for field in form %}
+			<div class="fieldWrapper">
+				{{ field.errors }}
+				{{ field.label_tag }}: {{field }}
+			</div>
+			{% endfor %}
+			<p><input type="submit" value="Observation" /></p> </form>
+	</body>
+
+</html>

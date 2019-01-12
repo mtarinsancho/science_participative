@@ -14,7 +14,8 @@ def affichetable(request):
 
 
 
-
+def new_view(request):
+	return "Hola Maria"
 
 def showEspeces(request, nom_vern):
 	especes = table1.objects.get(Nom_vern=nom_vern)

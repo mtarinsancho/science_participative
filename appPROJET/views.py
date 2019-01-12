@@ -1,21 +1,16 @@
 from django.db.models import Q
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
-
 from appPROJET.models import Specie, Ecosystem
 from .forms import NewSpeciesForm
+from django.views.decorators.csrf import csrf_exempt
 
-
-def species_in_ecosystem(request, ecosystem_name):
+def species_in_ecosystem(request, ecosystem_name):5
     # /ecosystem/get/forest
-
     # Get the specific ecosystem via 'ecosystem_name'
     my_ecosystem = Ecosystem.objects.get(Name=ecosystem_name)
-
-    # Find all the species associated with the SPECIFIC ecosystem (e.g., 'forest' -> buho, pajaro, lombriz de tierra)
+    # Find all the species associated with the SPECIFIC ecosystem (e.g., 'forest' -> loup, orchis mâle)
     species_in_ecosystem = my_ecosystem.species.all()
-
-    return render(request, "templates/blabla.html", {"species_in_ecosystem": species_in_ecosystem})
+    return render(request, "templates/speciesecosystem.html", {"species_in_ecosystem": species_in_ecosystem})
 
 
 def affichetable(request):
@@ -27,7 +22,6 @@ def affichetable(request):
 def show_especes(request, search_text):
     # Lookup for species that contain the given text in 'Nom_latin' field or (|) in 'Nom_vern' field
     species = Specie.objects.filter(Q(Nom_latin=search_text) | Q(Nom_vern=search_text))
-
     return render(request, "templates/sp.html", {"species": species})
 
 

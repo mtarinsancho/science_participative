@@ -14,6 +14,7 @@ def affichetable(request):
 
 
 
+
 def showEspeces(request, nom_vern):
 	especes = table1.objects.get(Nom_vern=nom_vern)
 	return render(request, "templates/sp.html", {"especes" : especes})

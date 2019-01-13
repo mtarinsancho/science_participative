@@ -6,6 +6,7 @@ class Specie(models.Model):
     Nom_vern = models.TextField(null=True)
     Date = models.DateTimeField(auto_now_add=True, auto_now=False)
     Observateur = models.TextField(null=True)
+    Localisation = models.TextField(null=True)
 
 # Show the variable with a name instead of a identity number (primary key). Here we choose Nom_latin which represents a line in Specie.
 

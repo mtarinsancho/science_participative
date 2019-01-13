@@ -38,6 +38,7 @@ def new_species_form(request):
     nom_vern = request.GET.get('Nom_vern')
     date = request.GET.get('Date')
     observateur = request.GET.get('Observateur')
+    localisation = request.GET.get('Localisation')
     ecosystem_name = request.GET.get('Ecosystem')
 
     # If the variables are created (are in the URL) then create the species entry in the database

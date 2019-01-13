@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+{% for specie in species_in_ecosystem %}
+            <li>{{ specie.Nom_latin }} | {{ specie.Nom_vern }} {{ specie.Ecosystem }} </li>
+			<br>
+		{% endfor %}
 </body>
 </html>

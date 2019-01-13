@@ -5,9 +5,19 @@ from appPROJET.models import Specie, Ecosystem
 
 @admin.register(Specie)
 class SpeciesAdmin(admin.ModelAdmin):
-    fields = ('Nom_latin', 'Nom_vern',)
+    fields = ('Nom_latin', 'Nom_vern', 'Date', 'Observateur')
+
+
+class SpeciesAccessInline(admin.StackedInline):
+    model = Ecosystem.species.through
 
 
 @admin.register(Ecosystem)
 class EcosystemAdmin(admin.ModelAdmin):
-    fields = ('Name',)
+    fields = ('Name','species')
+    inlines = [
+        SpeciesAccessInline,
+    ]
+
+
+

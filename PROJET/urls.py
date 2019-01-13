@@ -21,8 +21,9 @@ from appPROJET.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
 	url(r'appelfiches$', affichetable, name='species_table'),
-    path('sp/get/<search_text>', show_especes(), name='especes'),
+    path('sp/get/<search_text>', show_especes, name='especes'),
     url(r'createNewSpecies$', new_species_form),
-    path('speciesecosystem/get/<ecosystem_name>', species_in_ecosystem(), name='species_in_ecosystem' )
+    path('speciesecosystem/get/<ecosystem_name>', species_in_ecosystem, name='species_in_ecosystem' ),
+    url(r'showsheets$', show_sheets, name='fiches_especes')
 ]
 

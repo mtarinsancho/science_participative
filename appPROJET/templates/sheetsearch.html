@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-    {% for sheet in Sheets %}
+    {% for sheet in sheets %}
             <li>{{ sheet.Nom_latin }} | {{ sheet.Nom_vern }} | {{ sheet.Description }} | {{ sheet.Status }} | {{ sheet.Localisation }} </li>
 			<br>
 		{% endfor %}

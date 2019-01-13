@@ -1,8 +1,9 @@
 from django.db.models import Q
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+
 from appPROJET.models import Specie, Ecosystem, Sheets
 from .forms import NewSpeciesForm
-from django.views.decorators.csrf import csrf_exempt
 
 
 # Show all observations in the database
@@ -43,14 +44,13 @@ def new_species_form(request):
 
     # If the variables are created (are in the URL) then create the species entry in the database
     # 'if' checks if the variables are not empty.
-    if nom_latin and nom_vern and date and observateur and ecosystem_name :
+    if nom_latin and nom_vern and date and observateur and ecosystem_name:
 
         # As ecosystem is a foreign key in the specie table, we need to use get or create which gives two variables : the new or not new (True or False) and the object
-        #As it gives you two solutions, we need two variables ecosystem (the entry of the ecosystem name) and created(True or false)
-        #By default
+        # As it gives you two solutions, we need two variables ecosystem (the entry of the ecosystem name) and created(True or false)
+        # By default
 
         ecosystem, created = Ecosystem.objects.get_or_create(Name=ecosystem_name)
-
 
         specie = Specie(
             Nom_latin=nom_latin,
@@ -78,10 +78,10 @@ def new_species_form(request):
 # Show all species sheets
 def show_sheets(request):
     all_sheets_in_table = Sheets.objects.all()
-    return render(request, "templates/showsheets.html", {"fiches_especes": all_sheets_in_table})
+    return render(request, "templates/showsheets.html", {"sheets": all_sheets_in_table})
+
 
 # Search one species sheet by both latin and vernacular name
 def sheet_search(request, search_text):
-    sheet=Sheets.objects.filter(Q(Nom_latin=search_text) | Q(Nom_vern=search_text))
-    return render (request, "templates/sheetsearch.html", {"sheet":sheet})
-
+    sheets = Sheets.objects.filter(Q(Nom_latin=search_text) | Q(Nom_vern=search_text))
+    return render(request, "templates/sheetsearch.html", {"sheets": sheets})

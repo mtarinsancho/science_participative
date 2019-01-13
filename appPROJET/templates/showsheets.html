@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-    {% for specie in fiches_especes %}
-            <li>{{ specie.Nom_latin }} | {{ specie.Nom_vern }} {{ specie.Description }}{{ specie.Status }} </li>
+    {% for sheet in sheets %}
+            <li>{{ sheet.Nom_latin }} | {{ sheet.Nom_vern }} {{ sheet.Description }}{{ sheet.Status }} </li>
 			<br>
     {% endfor %}
 

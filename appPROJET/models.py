@@ -25,4 +25,7 @@ class Sheets(models.Model):
     Nom_latin = models.TextField(null=True)
     Nom_vern = models.TextField(null=True)
     Description = models.TextField(null=True)
+    Status = models.TextField(null=True)
+
+
 

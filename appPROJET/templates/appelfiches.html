@@ -4,7 +4,7 @@
 
     <li>{{ specie.Nom_latin }} | {{ specie.Nom_vern }} | {{ specie.Date }}|{{ specie.Observateur }}|
         {% if specie.ecosystems %}
-            {% for ecosystem in specie.ecosystems %}
+            {% for ecosystem in specie.ecosystems.all %}
                 {{ ecosystem.Name }}
             {% endfor %}
         {% endif %}</li>

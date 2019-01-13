@@ -80,3 +80,8 @@ def show_sheets(request):
     all_sheets_in_table = Sheets.objects.all()
     return render(request, "templates/showsheets.html", {"fiches_especes": all_sheets_in_table})
 
+# Search one species sheet by both latin and vernacular name
+def sheet_search(request, search_text):
+    sheet=Sheets.objects.filter(Q(Nom_latin=search_text) | Q(Nom_vern=search_text))
+    return render (request, "templates/sheetsearch.html", {"sheet":sheet})
+

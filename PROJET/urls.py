@@ -24,6 +24,7 @@ urlpatterns = [
     path('sp/get/<search_text>', show_especes, name='especes'),
     url(r'createNewSpecies$', new_species_form),
     path('speciesecosystem/get/<ecosystem_name>', species_in_ecosystem, name='species_in_ecosystem' ),
-    url(r'showsheets$', show_sheets, name='fiches_especes')
+    url(r'showsheets$', show_sheets, name='fiches_especes'),
+    path('sheetsearch/get/<search_text>', sheet_search, name='sheet')
 ]
 

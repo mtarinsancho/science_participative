@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+    {% for sheet in Sheets %}
+            <li>{{ sheet.Nom_latin }} | {{ sheet.Nom_vern }} | {{ sheet.Description }} | {{ sheet.Status }} | {{ sheet.Localisation }} </li>
+			<br>
+		{% endfor %}
+</body>
+</html>

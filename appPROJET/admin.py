@@ -5,7 +5,7 @@ from appPROJET.models import Specie, Ecosystem, Sheets
 
 @admin.register(Specie)
 class SpeciesAdmin(admin.ModelAdmin):
-    fields = ('Nom_latin', 'Nom_vern', 'Date', 'Observateur')
+    fields = ('Nom_latin', 'Nom_vern', 'Observateur')
 
 
 class SpeciesAccessInline(admin.StackedInline):

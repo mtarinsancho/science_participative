@@ -1,9 +1,15 @@
 <html>
-	<body>
-		{% for specie in species_table %}
-            <li>{{ specie.Nom_latin }} | {{ specie.Nom_vern }} | {{ specie.Date }}|{{ specie.Observateur }}|{{ specie.ecosystems }} </li>
-			<br>
-		{% endfor %}
-    </body>
+<body>
+{% for specie in species_table %}
+
+    <li>{{ specie.Nom_latin }} | {{ specie.Nom_vern }} | {{ specie.Date }}|{{ specie.Observateur }}|
+        {% if specie.ecosystems %}
+            {% for ecosystem in specie.ecosystems %}
+                {{ ecosystem.Name }}
+            {% endfor %}
+        {% endif %}</li>
+    <br>
+{% endfor %}
+</body>
 
 </html>

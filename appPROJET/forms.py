@@ -7,5 +7,3 @@ class NewSpeciesForm(forms.Form):
 	Observateur = forms.CharField(label='Observateur', max_length=100)
 	Localisation = forms.CharField(label='Localisation', max_length=100)
 	Ecosystem = forms.CharField(label='Ecosystem', max_length=100)
-
-

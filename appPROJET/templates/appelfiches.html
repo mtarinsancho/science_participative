@@ -2,6 +2,9 @@
 <body>
 {% for specie in species_table %}
 
+
+    <!-- As ecosystems is a "many to many" relation, to show the linked ecosystem with the specie,
+    we need to create a loop to check one by one each ecosystem name linking with "specie" -->
     <li>{{ specie.Nom_latin }} | {{ specie.Nom_vern }} | {{ specie.Date }}|{{ specie.Observateur }}|
         {% if specie.ecosystems %}
             {% for ecosystem in specie.ecosystems.all %}

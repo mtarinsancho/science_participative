@@ -20,6 +20,6 @@ class EcosystemAdmin(admin.ModelAdmin):
     ]
 
 @admin.register(Sheets)
-class SpeciesAdmin(admin.ModelAdmin):
+class SheetsAdmin(admin.ModelAdmin):
     fields = ('Nom_latin', 'Nom_vern', 'Description', 'Status')
 
